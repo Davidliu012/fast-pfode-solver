@@ -20,16 +20,16 @@ sample_algorithms = [
     ["euler", 100],
     ["euler", 200],
     ["euler", 500],
-    # ["euler", 1500],
+    ["euler", 1500],
     ["heun", 50],
     ["heun", 100],
     ["heun", 250],
     ["heun", 500],
-    # ["heun", 1000],
+    ["heun", 1000],
     ["collocation", (5, 3, 15)],
     ["collocation", (20, 3, 15)],
     ["collocation", (40, 3, 15)],
-    # ["collocation", (60, 3, 15)],
+    ["collocation", (60, 3, 15)]
 ]
 
 # Device setup

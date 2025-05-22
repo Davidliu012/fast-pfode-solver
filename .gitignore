@@ -1,4 +1,7 @@
 __pycache__/
+checkpoints/
+samples_from_ode/
+iterative_progress/
 
 
 # Compiled python modules.
