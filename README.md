@@ -1,7 +1,3 @@
-Here's an improved version of your `README.md` that clarifies scope, enhances professionalism, and specifies where reproduction instructions can be found:
-
----
-
 # ⚡ FAST PF-ODE Sampling
 **Official Implementation of “On Provably Fast Consistency Model ODE Solvers” (NeurIPS 2025)**  
 
@@ -42,6 +38,7 @@ We recommend using a virtual environment:
 conda create -n fast-sampling python=3.11
 conda activate fast-sampling
 pip install -r requirements.txt
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128  # Change to the correct version of your local setting
 ```
 
 ---
@@ -57,4 +54,3 @@ All experiments were conducted on a workstation with the following configuration
 * **Python**: 3.11
 * **CUDA**: 12.8
 * **cuDNN**: 9.8
-* **PyTorch**: 2.8.0

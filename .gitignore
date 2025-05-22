@@ -2,6 +2,8 @@ __pycache__/
 checkpoints/
 samples_from_ode/
 iterative_progress/
+real_cifar10/
+data/
 
 
 # Compiled python modules.

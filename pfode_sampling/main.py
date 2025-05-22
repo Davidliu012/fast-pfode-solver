@@ -18,18 +18,18 @@ import importlib.util
 # Sampling algorithms to run
 sample_algorithms = [
     ["euler", 100],
-    ["euler", 200],
-    ["euler", 500],
-    ["euler", 1500],
+    # ["euler", 200],
+    # ["euler", 500],
+    # ["euler", 1500],
     ["heun", 50],
-    ["heun", 100],
-    ["heun", 250],
-    ["heun", 500],
-    ["heun", 1000],
+    # ["heun", 100],
+    # ["heun", 250],
+    # ["heun", 500],
+    # ["heun", 1000],
     ["collocation", (5, 3, 15)],
-    ["collocation", (20, 3, 15)],
-    ["collocation", (40, 3, 15)],
-    ["collocation", (60, 3, 15)]
+    # ["collocation", (20, 3, 15)],
+    # ["collocation", (40, 3, 15)],
+    # ["collocation", (60, 3, 15)]
 ]
 
 # Device setup
@@ -123,7 +123,7 @@ def collocation_sampler(model, sde, t_init, shape, inverse_scaler, K, N, iter_nu
 
 def main():
     # Load config
-    ckpt_path = "checkpoints/subvp/cifar10_ddpmpp_deep_continuous/checkpoint_18.pth"
+    ckpt_path = "checkpoints/subvp/cifar10_ddpmpp_deep_continuous/model.pth"
     config_path = "configs/subvp/cifar10_ddpmpp_deep_continuous.py"
     spec = importlib.util.spec_from_file_location("config_module", config_path)
     config_module = importlib.util.module_from_spec(spec)
@@ -186,6 +186,7 @@ def main():
                                        num_steps=param, eps=sampling_eps, device=device)
                 nfe = param * 2
             elif method == 'collocation':
+                # We set eps to 0 since the collocation node wouldn't exceed "sampling_eps"
                 samples, nfe = collocation_sampler(score_model, sde, t_init, shape, inverse_scaler,
                                                    K=K, N=N, iter_nums=I, eps=0, device=device)
             else:
